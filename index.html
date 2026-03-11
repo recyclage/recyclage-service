@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Recyclage Pro | Collecte de canettes pour clubs & fast-food</title>
+    <title>Recyclage Pro | Collecte gratuite de canettes à Toul, Nancy et alentours</title>
     <meta
       name="description"
-      content="Service professionnel de collecte de canettes pour clubs de football, kebabs, tacos et fast-food."
+      content="Service professionnel et gratuit de collecte de canettes pour clubs de football, kebabs, tacos et fast-food à Toul, Nancy et alentours."
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -17,14 +17,14 @@
         <a href="#contact" class="btn btn-outline">Demander un devis</a>
       </nav>
       <div class="container hero-content">
-        <p class="badge">Collecte B2B • Clubs & restauration rapide</p>
+        <p class="badge">Collecte B2B gratuite • Toul, Nancy & alentours</p>
         <h1>
           Valorisez vos canettes,
           <span>simplifiez votre logistique</span>
         </h1>
         <p>
           Nous accompagnons les clubs de football et les enseignes type kebab/tacos
-          avec une solution de collecte fiable, traçable et rentable.
+          avec une solution de collecte gratuite, fiable et traçable.
         </p>
         <div class="hero-actions">
           <a href="#services" class="btn">Découvrir nos services</a>
@@ -36,26 +36,30 @@
     <main>
       <section id="services" class="section container">
         <h2>Une solution professionnelle de A à Z</h2>
+        <p>
+          Intervention locale sur le secteur de <strong>Toul</strong>,
+          <strong>Nancy</strong> et les communes voisines.
+        </p>
         <div class="cards">
           <article class="card">
             <h3>Pour clubs de football</h3>
             <p>
               Mise à disposition de bacs, passages après match et suivi des volumes
-              pour financer vos projets associatifs.
+              pour financer vos projets associatifs, sans frais de collecte.
             </p>
           </article>
           <article class="card">
             <h3>Pour kebabs & tacos</h3>
             <p>
               Collecte régulière adaptée à vos pics d'activité, avec enlèvements
-              flexibles selon vos horaires.
+              flexibles selon vos horaires, toujours gratuitement.
             </p>
           </article>
           <article class="card">
             <h3>Reporting & conformité</h3>
             <p>
               Tableau de bord mensuel, attestations de valorisation et accompagnement
-              pour vos engagements RSE.
+              pour vos engagements RSE, avec traçabilité complète.
             </p>
           </article>
         </div>
@@ -96,29 +100,44 @@
               votre restaurant.
             </p>
           </div>
-          <form class="contact-form" onsubmit="event.preventDefault(); alert('Merci ! Nous vous recontactons rapidement.');">
+          <form
+            class="contact-form"
+            action="https://formsubmit.co/votre-email@domaine.fr"
+            method="POST"
+          >
+            <input type="hidden" name="_subject" value="Nouvelle demande de devis - RecyclagePro" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
             <label>
               Nom de la structure
-              <input type="text" placeholder="Ex: FC Sud / Tacos Premium" required />
+              <input name="structure" type="text" placeholder="Ex: FC Sud / Tacos Premium" required />
             </label>
             <label>
               Ville
-              <input type="text" placeholder="Ex: Lyon" required />
+              <input name="ville" type="text" placeholder="Ex: Toul" required />
             </label>
             <label>
               Email
-              <input type="email" placeholder="contact@structure.fr" required />
+              <input name="email" type="email" placeholder="contact@structure.fr" required />
             </label>
             <label>
               Type d'activité
-              <select required>
+              <select name="activite" required>
                 <option value="">Sélectionner</option>
                 <option>Club de football</option>
                 <option>Kebab / tacos</option>
                 <option>Autre restauration rapide</option>
               </select>
             </label>
+            <label>
+              Message
+              <textarea name="message" rows="4" placeholder="Précisez vos volumes et disponibilités"></textarea>
+            </label>
             <button class="btn" type="submit">Envoyer la demande</button>
+            <p class="form-note">
+              Les demandes de devis arrivent sur l'adresse configurée dans le formulaire.
+              Remplacez <strong>votre-email@domaine.fr</strong> par votre vraie adresse.
+            </p>
           </form>
         </div>
       </section>
