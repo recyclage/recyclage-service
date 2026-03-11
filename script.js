@@ -27,3 +27,26 @@ const observer = new IntersectionObserver(
 );
 
 counters.forEach((counter) => observer.observe(counter));
+
+const quoteForm = document.querySelector('#quote-form');
+
+if (quoteForm) {
+  quoteForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(quoteForm);
+    const recipient = quoteForm.dataset.recipient || '';
+    const subject = 'Nouvelle demande de devis - RecyclagePro';
+    const body = [
+      `Structure: ${formData.get('structure') || ''}`,
+      `Ville: ${formData.get('ville') || ''}`,
+      `Email: ${formData.get('email') || ''}`,
+      `Activité: ${formData.get('activite') || ''}`,
+      '',
+      'Message:',
+      `${formData.get('message') || ''}`,
+    ].join('\n');
+
+    window.location.href = `mailto:${encodeURIComponent(recipient)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
+}
